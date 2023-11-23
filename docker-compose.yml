@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  dream_scribe:
+    container_name: dream_scribe
+    build:
+      context: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_URL: postgres:5432
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+networks:
+  default:
+    driver: bridge

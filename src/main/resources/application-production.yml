@@ -1,0 +1,9 @@
+postgresql:
+  username: ${POSTGRES_USER:postgres}
+  password: ${POSTGRES_PASSWORD:postgres}
+  schema: ${POSTGRES_DB:postgres}
+  url: ${POSTGRES_URL:localhost:5432}
+
+spring:
+  jpa:
+    show-sql: false
